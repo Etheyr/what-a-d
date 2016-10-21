@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
+
+	<div class="error">
+		<span class="spanError"">Le jour doit être compris entre 1 et 31 !</span>
+	</div>
+
+	<div class="center">
+
+	<span id="spanJour">Jour</span>
 	
-</body>
-</html>
+		<div>
+			<input type="text" id="jour">
+		</div>
+
+		<span id="spanMois">Mois</span>
+
+		<select id="mois">
+			<option value="01">Janvier</option>
+			<option value="02">Février</option>
+			<option value="03">Mars</option>
+			<option value="04">Avril</option>
+			<option value="05">Mai</option>
+			<option value="06">Juin</option>
+			<option value="07">Juillet</option>
+			<option value="08">Août</option>
+			<option value="09">Septembre</option>
+			<option value="10">Octobre</option>
+			<option value="11">Novembre</option>
+			<option value="12">Decembre</option>
+		</select>
+
+		<span id="spanAnnee">Année</span>
+
+		<div>
+			<input type="text" id="annee">
+		</div>
+
+		<div>
+		<button id="verifier">Vérifier</button>
+		</div>
+
+		<div id="overlay">
+			<span id="spanOverlay"></span>
+		</div>
+
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<script src="node_modules/moment/moment.js"></script>
+		<script src="node_modules/semantic-ui/dist/semantic.js"></script>
+		<script src="app.js"></script>	
+	</body>
+	</html>
