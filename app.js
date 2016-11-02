@@ -16,17 +16,21 @@
 		listeners: function(){
 
 			$('#verifier').on('click', this.verifier.bind(this));
+			$('#buttonOverlay').on('click')
 		},
 		verifier: function(){
 
-			this.moduleMoment();
+			$('#buttonOverlay').hide();
 			this.jour =	$('#jour').val();
 
 			if (this.jour > 31){
-				console.log('azerty')
+
 				$('.error').show();
 				$('#jour').css('border' , '2px solid #ff7473');
+
 			}else {
+				this.moduleMoment();
+
 				$('#spanOverlay').text(this.momentLL);
 				$('body').css('background' , '#9055A2')
 				$('#jour').hide();
@@ -36,6 +40,7 @@
 				$('#spanJour').hide();
 				$('#spanMois').hide();
 				$('#spanAnnee').hide();
+				$('.error').hide();
 			}
 
 			this.mois = $('#mois').val();
@@ -46,6 +51,7 @@
 
 		},
 		moduleMoment: function() {
+
 			this.momentFR = moment.locale('FR');
 			this.momentLL =  moment({day:this.jour , month:this.mois , year:this.annee}).format('dddd');
 			console.log(this.momentLL);
